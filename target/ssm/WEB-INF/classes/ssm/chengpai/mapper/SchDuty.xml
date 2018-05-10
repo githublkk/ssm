@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ssm.chengpai.dao.TestDao">
+
+	<resultMap id="BaseResultMap" type="ssm.chengpai.bean.Duty">
+     <id column="duty_id" property="dutyId"/>
+   <result column="duty_name" property="dutyName"/>
+   <result column="school_id" property="schoolId"/>
+	</resultMap>
+
+<!-- <insert id="insert" parameterType="java.util.Map">
+insert into sch_duty(duty_name,school_id) VALUES(#{dutyName},#{schoolId})
+
+</insert>
+ <delete id="delete" parameterType="java.util.Map">
+
+delete from sch_duty where duty_id=#{dutyId}
+</delete>
+-->
+<update id="update" parameterType="java.util.Map">
+update  sch_duty set duty_name=#{dutyName} where duty_id=#{dutyId}
+</update>
+
+<select id="selectList"  resultMap="BaseResultMap">
+select * from  sch_duty 
+</select>
+
+
+</mapper>
